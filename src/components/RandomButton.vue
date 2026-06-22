@@ -10,6 +10,8 @@
 <!-- División divisidora -->
 
 <script setup lang="ts">
-
+defineEmits<{
+  (e: 'random-click'): void
+}>()
 
 </script>

@@ -6,6 +6,4 @@
 defineProps<{
     image: string
 }>()
-
-
 </script>

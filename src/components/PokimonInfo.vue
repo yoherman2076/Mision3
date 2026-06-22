@@ -1,12 +1,13 @@
 <template>
-    <div v-if="loading">
+    <div v-if="loading" || !pokemon>
         Cargando . . .
     </div>
-
-    <div v-else-if="pokemon">
+    <template v-else-if="pokemon">
         <h2 class="text-center font-bold"
         >{{ pokemon.name }}</h2>
-    </div>
+        <img :src="pokemon.sprites.front_default" class="w-80 h-80" />
+    </template>
+
 </template>
 
 <script setup lang="ts">
