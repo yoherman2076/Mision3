@@ -5,18 +5,11 @@
     Pokemon aleatorio
   </button><br>
 
-  <img v-if="sevenUp" :src="sevenUp" alt="poKimon" >
-
 </template>
 
 <!-- División divisidora -->
 
 <script setup lang="ts">
 
-import { ref } from 'vue'
 
-const sevenUp = ref('')
-defineEmits<{
-    (e: "random-click"): void
-}>()
 </script>
