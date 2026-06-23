@@ -1,12 +1,22 @@
 <template>
-  <form @submit.prevent="sendDatos">
-    <input v-model="form.name" placeholder="Nombre" class="bg-blue-200 mx-30"/>
-    <input v-model="form.apellido" placeholder="Apellido" class="bg-blue-200 mx-30"/>
-    <input v-model="form.dni" placeholder="DNI" class="bg-blue-200 mx-30"/>
-    <input v-model="form.email" placeholder="Email" class="bg-blue-200 mx-30"/>
-    <input v-model="form.pokemon_assigned" placeholder="Pokemon asignado" class="bg-blue-200 mx-30"/>
-    <button type="submit">Enviar</button>
-  </form>
+    <div class="flex justify-center">
+        <form @submit.prevent="sendDatos" 
+        class="columns-2 border rounded-lg w-lg bg-white rouded-lg px-7 py-4">
+          <input v-model="form.name" placeholder="Nombre" 
+          class="border rounded-lg p-2 m-1 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <input v-model="form.apellido" placeholder="Apellido" 
+          class="border rounded-lg p-2 m-1 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <input v-model="form.dni" placeholder="DNI" 
+          class="border rounded-lg p-2 m-1 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <input v-model="form.email" placeholder="Email" 
+          class="border rounded-lg p-2 m-1 w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <input v-model="form.pokemon_assigned" placeholder="Pokemon asignado" 
+          class="border rounded-lg p-2 m-1 w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <button type="submit"
+          class="bg-red-500 text-white m-1 p-10 rounded-lg py-2 hover:bg-red-600"
+          >Enviar</button>
+        </form>
+    </div>
 
 </template>
 

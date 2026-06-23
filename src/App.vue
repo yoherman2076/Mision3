@@ -8,7 +8,7 @@
 
   
   <!-- Botón randomizador -->
-  <RandomButton @random-click="getRandomPokemon" />
+  <RandomButton @random-click="getRandomPokemon" class="bg-blue-600 text-white px-10 py-3 rounded" />
   <PokimonInfo :loading="loading" :pokemon="pokemon" />
   
 </template>
