@@ -1,5 +1,83 @@
-# Vue 3 + TypeScript + Vite
+# **Misión 3: Poke API - Cazadlos a todos**
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Instalación y ejecución del proyecto
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Requisitos previos
+
+Antes de comenzar, asegúrate de tener instalado:
+
+* `Node.js` 
+* `npm`
+
+Puedes comprobar las versiones instaladas si ejecutas:
+
+```bash
+node -v
+npm -v
+```
+
+---
+## Clonar el repositorio
+
+```bash
+git clone https://github.com/yoherman2076/Mision3
+cd Mision3
+```
+
+---
+## Instalar dependencias
+
+Instala todas las dependencias del proyecto mediante:
+
+```bash
+npm install
+```
+
+---
+## Configuración de variables de entorno
+
+El proyecto utiliza variables de entorno para su configuración.
+
+1. Desde la terminal, copia el archivo de ejemplo:
+
+```bash
+cp .env.example .env
+```
+
+2. Completa los valores necesarios dentro del archivo `.env`.
+
+> El archivo `.env` está incluido en `.gitignore` y no debería subirse al repositorio.
+
+---
+## Ejecutar el proyecto en desarrollo
+
+Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+Una vez iniciado, abre en el navegador la URL indicada en la terminal, normalmente `http://localhost:5173`.
+
+---
+## Generar la versión de producción
+
+Para generar la build optimizada:
+
+```bash
+npm run build
+```
+
+Los archivos generados se almacenarán en el directorio `dist/`.
+
+---
+## Tecnologías usadas
+
+- **Vue 3**
+- **Vite**
+- **TypeScript**
+- **Tailwind CSS**
+- **Axios**
+- **PokéAPI**
+
+---

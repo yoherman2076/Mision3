@@ -7,7 +7,7 @@
   <br>
 
   
-  <!-- Botón randomizador -->
+  <!-- Botón randomizador y la info del bicho-->
   <RandomButton @random-click="getRandomPokemon" class="bg-blue-600 text-white px-10 py-3 rounded" />
   <PokimonInfo :loading="loading" :pokemon="pokemon" />
   
@@ -15,18 +15,18 @@
 
 
 <script setup lang="ts">
-
 import RandomButton from "./components/RandomButton.vue"
 import Form from "./components/Form.vue"
 import { usePokimon } from './composable/usePokimon.ts'
 import PokimonInfo from './components/PokimonInfo.vue'
-
+// Todas las variables del composable:
 const {
   pokemon,
   loading,
   getRandomPokemon,
 } = usePokimon()
 
+// función del formulario.
 function receiveData(data: {
   name: string
   email:string

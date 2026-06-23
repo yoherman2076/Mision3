@@ -1,4 +1,5 @@
 <template>
+    <!-- Formulario formularioso. Simplemente se puede escribir y cuando se le da a enviar se vacían los campos. -->
     <div class="flex justify-center">
         <form @submit.prevent="sendDatos" 
         class="columns-2 border rounded-lg w-lg bg-white rouded-lg px-7 py-4">
@@ -17,12 +18,12 @@
           >Enviar</button>
         </form>
     </div>
-
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
+// Para cuando el formulario funcione, ya tendré medio camino hecho porque los datos ya tienen
+// el espacio para que tengan valor.
 const emit = defineEmits<{
     (e: "submit-form", data: {
         name: string
@@ -40,7 +41,7 @@ dni: "",
 email: "",
 pokemon_assigned: ""
 })
-
+// Los datos se ""envían"", en realidad aparecen en la consola y ya está.
 const sendDatos = () => {
     emit("submit-form", {
         name: form.value.name,
@@ -57,6 +58,4 @@ const sendDatos = () => {
     form.value.email = ""
     form.value.pokemon_assigned = ""
 }
-
-
 </script>
