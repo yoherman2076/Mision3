@@ -3,7 +3,7 @@
         :value="modelValue"
         @input="updateValue"
         :placeholder="placeholder"
-        class="border rounded-lg p-2 m-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        class="border-black border-2 rounded-lg p-1 m-1 text-black focus:outline-none focus:ring-3 focus:ring-blue-500"
     />
 </template>
 

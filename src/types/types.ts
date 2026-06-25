@@ -7,3 +7,15 @@ export interface Form {
 }
 
 export type Buttons = 'button' | 'submit' | 'reset'
+
+export type Pokemon = {
+    name: string
+    sprites: {
+        front_default: string | null
+    }
+    types: {
+        type: {
+            name: string
+        }
+    }[]
+}

@@ -2,7 +2,7 @@
 <!-- Formulario formularioso. Simplemente se puede escribir y cuando se le da a enviar se vacían los campos. -->
 <div class="flex justify-center">
     <form @submit.prevent="sendDatos"
-        class="columns-2 border rounded-lg w-lg bg-white rouded-lg px-7 py-4">
+        class="columns-2 border-2 bg-indigo-400 rounded-lg w-lg p-2 m-1 rouded-lg ">
         <BaseInput v-model="form.name" placeholder="Nombre"/>
         <BaseInput v-model="form.surname" placeholder="Apellido"/>
         <BaseInput v-model="form.dni" placeholder="DNI"/>

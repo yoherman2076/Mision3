@@ -3,10 +3,10 @@
    en el App.vue para llamar a la función.  -->
   <div class="flex justify-center">
     <BaseButton @click="$emit('random-click')"
-      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg min-w-45 transition"
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 mt-2 rounded-lg min-w-45 transition"
     >
       Pokemon aleatorio
-    </BaseButton><br>
+    </BaseButton>
   </div>
 </template>
 

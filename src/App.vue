@@ -1,11 +1,9 @@
 <template>
   <main>
-    <h1 class="font-sans text-5xl font-bold m-2 flex justify-center">Welcome to la Misión 3</h1>
-    <br>
+    <h1 class="font-sans text-5xl font-bold m-5 flex justify-center">Welcome to la Misión 3</h1>
     
     <!-- formulario -->
     <Form @submit-form="receiveData" />
-    <br>
   
     <!-- Botón randomizador y la info del bicho-->
     <RandomButton @random-click="getRandomPokemon" />
