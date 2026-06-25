@@ -1,9 +1,18 @@
 <template>
-    <img v-if="image" :src="image" alt="poKimon">
+    <div class="flex justify-center">
+        <img 
+            v-if="pokeimage"    
+            :src="pokeimage" 
+            alt="poKimon"
+            class="w74 h-74 object-contain"
+            >
+    </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
-    image: string
+    pokeimage: string
+    alt?: string
 }>()
+
 </script>
