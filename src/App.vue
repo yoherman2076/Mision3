@@ -1,14 +1,17 @@
 <template>
-  <main>
-    <h1 class="font-sans text-5xl font-bold m-5 flex justify-center">Welcome to la Misión 3</h1>
-    
-    <!-- formulario -->
-    <Form @submit-form="receiveData" />
   
-    <!-- Botón randomizador y la info del bicho-->
-    <RandomButton @random-click="getRandomPokemon" />
-    <PokimonInfo :loading="loading" :pokemon="pokemon" />  
-  </main>
+    <main class="min-h-screen bg-gradient-to-b from-cyan-700 to-slate-900 text-white py-5">
+      <h1 class="text-5xl font-bold text-center py-7">Welcome to la Misión 3</h1>
+      <div class="max-w-4xl mx-auto px-6 space-y-5">
+        <!-- formulario -->
+        <Form @submit-form="receiveData" />
+      
+        <!-- Botón randomizador y la info del bicho-->
+        <RandomButton @random-click="getRandomPokemon" />
+        <PokimonInfo :loading="loading" :pokemon="pokemon" :pokerror="pokerror"/>
+      </div>
+    </main>
+  
 </template>
 
 
@@ -23,7 +26,8 @@ import { usePokimon } from './composable/usePokimon.ts'
 const {
   pokemon,
   loading,
-  getRandomPokemon,
+  pokerror,
+  getRandomPokemon  
 } = usePokimon()
 
 // función del formulario.

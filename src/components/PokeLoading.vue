@@ -7,9 +7,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Pokemon } from '../types/types.ts'
 
 defineProps<{
     loading: boolean
-    pokemon: any
+    pokemon: Pokemon | null
 }>()
 </script>
