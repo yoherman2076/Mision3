@@ -24,7 +24,6 @@ export function usePokimon() {
         
       }
       catch (error) {
-        // console.error("Error garrafal al obtener el pookemon:", error)
         pokerror.value = "Error garrafal al localizar el Pokemon."
       }
       finally {

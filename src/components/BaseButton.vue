@@ -3,7 +3,7 @@
         :type="type"
         class="w-full rounded-xl border-2 bg-slate-900 py-3 font-semibold text-white hover:bg-slate-800/80 transition"
     >
-    <slot />
+        <slot />
     </button>
 </template>
 

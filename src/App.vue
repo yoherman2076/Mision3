@@ -33,7 +33,7 @@ function receiveData(data: {
   name: string
   email:string
 }) {
-    console.log(data)
+    return data
 }
 
 </script>
