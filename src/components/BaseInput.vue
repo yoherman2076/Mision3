@@ -3,9 +3,10 @@
         :value="modelValue"
         @input="updateValue"
         :placeholder="placeholder"
-        class="border-black border-2 rounded-lg p-1 m-1 text-black focus:outline-none focus:ring-3 focus:ring-blue-500"
-    />
-</template>
+        class="w-full rounded-xl border border-zinc-400 bg-slate-800/70 px-4 py-3 text-white placeholder:text-slate-400 transition-all duration-200 outline-none focus:border-violet-500 focus:ring-cyan-500/40"
+        />
+    </template>
+<!-- "border-black border-2 rounded-lg px-2 py-1 mb-1 text-black focus:outline-none focus:ring-3 focus:ring-blue-500" -->
 
 <script setup lang="ts">
 const props = defineProps<{

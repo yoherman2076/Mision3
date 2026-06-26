@@ -1,9 +1,9 @@
 <template>
     <button
         :type="type"
-        class="bg-red-500 text-white m-2 px-4 py-2 rounded-lg hover:bg-red-600"
+        class="w-full rounded-xl border-2 bg-slate-900 py-3 font-semibold text-white hover:bg-slate-800/80 transition"
     >
-        <slot />
+    <slot />
     </button>
 </template>
 
