@@ -2,7 +2,7 @@
 <!-- Formulario formularioso. Simplemente se puede escribir y cuando se le da a enviar se vacían los campos. -->
     <div class="flex justify-center">
         <form @submit.prevent="sendDatos"
-            class="mx-auto flex max-w-md flex-col border-4 bg-slate-800/80 backdrop-blur-md rounded-lg shadow-2xl p-6 space-y-6 border-slate-800/70">
+            class="mx-auto flex max-w-md flex-col border-4 bg-slate-800/80 rounded-lg shadow-2xl p-6 space-y-6 border-slate-800/70">
             <div class="text-center">
                 <h2 class="text-2xl font-bold text-white">
                     Entrenador Pokimon

@@ -1,13 +1,19 @@
 <template>
-    <main class="min-h-screen bg-linear-to-b from-cyan-700 to-slate-900 text-white py-5">
-      <h1 class="bg-teal-500 rounded-se-full rounded-es-full text-5xl font-bold text-center py-6 m-4">Welcome to la Misión 3</h1>
-      <div class="max-w-4xl mx-auto px-6 space-y-5">
-        <!-- formulario -->
-        <Form @submit-form="receiveData" />
+    <main class="min-h-screen bg-linear-to-b from-cyan-700 to-slate-900 text-white py-2">
+      <div class="max-w-6xl mx-auto px-6 mb-6 mt-4 flex items-center justify-center">
+        <h1 class= "bg-teal-500 max-w-4xl rounded-es-full rounded-se-full text-5xl font-bold text-center px-30 py-4 ">Welcome to la Misión 3</h1>
+      </div>
       
-        <!-- Botón randomizador y la info del bicho-->
-        <RandomButton @random-click="getRandomPokemon" />
-        <PokimonInfo :loading="loading" :pokemon="pokemon" :pokerror="pokerror"/>
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+        <div>
+          <!-- formulario -->
+          <Form @submit-form="receiveData" />
+        </div>
+        <div class="flex flex-col items-center ">
+          <RandomButton @random-click="getRandomPokemon" class="max-w-xs" />
+          <!-- Botón randomizador y la info del bicho-->
+          <PokimonInfo :loading="loading" :pokemon="pokemon" :pokerror="pokerror"/>
+        </div>
       </div>
     </main>
 </template>
