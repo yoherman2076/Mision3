@@ -14,35 +14,57 @@
             <BaseInput v-model="form.surname" placeholder="Apellido"/>
             <BaseInput v-model="form.dni" placeholder="DNI"/>
             <BaseInput v-model="form.email" placeholder="Email"/>
-            <BaseInput v-model="form.pokemon_assigned" placeholder="Pokemon asignado"/>
             <BaseButton class="px-7 py-1" type="submit">Enviar</BaseButton>
         </form>
     </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, watch} from 'vue'
 // Para cuando el formulario funcione, ya tendré medio camino hecho porque los datos ya tienen
 // el espacio para que tengan valor.
 import BaseInput from './BaseInput.vue'
 import BaseButton from './BaseButton.vue';
-import type { Form } from '../types/types.ts'
+import type { TrainerForm } from '../types/types.ts'
+import { useTrainerStore } from '../stores/trainerStores.ts'
 
-const emit = defineEmits < {
-    (e: 'submit-form', data: Form): void
-}>()
 
-const initialForm: Form = {
+const trainerStore = useTrainerStore()
+
+const initialForm: TrainerForm = {
     name: "",
     surname: "",
     dni: "",
-    email: "",
-    pokemon_assigned: ""
+    email: ""
 }
 
-const form = ref<Form>({ ...initialForm })
+const form = ref<TrainerForm>({ ...initialForm })
+
+watch(
+    () => trainerStore.editingTrainer,
+    (trainer) => {
+        if (!trainer) return
+            form.value = {
+                name: trainer.name,
+                surname: trainer.surname,
+                dni: trainer.dni,
+                email: trainer.email
+            }
+    }
+)
+
 const sendDatos = () => {
-    emit('submit-form', form.value)   
+    if (trainerStore.editingTrainer) {
+        const updatedTrainer = {
+            ...trainerStore.editingTrainer,
+            ...form.value
+        }
+        trainerStore.updateTrainer(updatedTrainer)
+        trainerStore.clearEditing()
+        form.value = { ...initialForm }
+    } else {
+        trainerStore.addTrainer(form.value)
+    }
     form.value = { ...initialForm }
 }
 </script>
