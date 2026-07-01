@@ -1,22 +1,50 @@
 <template>
-<!-- Formulario formularioso. Simplemente se puede escribir y cuando se le da a enviar se vacían los campos. -->
-    <div class="flex justify-center">
-        <form @submit.prevent="sendDatos"
-            class="mx-auto flex max-w-md flex-col border-4 bg-slate-800/80 rounded-lg shadow-2xl p-6 space-y-6 border-slate-800/70">
-            <div class="text-center">
-                <h2 class="text-2xl font-bold text-white">
-                    Entrenador Pokimon
-                </h2>
+  <form
+    @submit.prevent="sendDatos"
+    class="max-w-md rounded-2xl border border-slate-700 bg-slate-800/70 p-8 shadow-2xl backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20 space-y-6"
+  >
+    <!-- Cabecera -->
+    <div class="text-center space-y-2">
+      <h2 class="text-3xl font-bold text-white">
+        Entrenador Pokémon
+      </h2>
 
-            </div>
-            
-            <BaseInput v-model="form.name" placeholder="Nombre"/>
-            <BaseInput v-model="form.surname" placeholder="Apellido"/>
-            <BaseInput v-model="form.dni" placeholder="DNI"/>
-            <BaseInput v-model="form.email" placeholder="Email"/>
-            <BaseButton class="px-7 py-1" type="submit">Enviar</BaseButton>
-        </form>
+      <p class="text-sm text-slate-300">
+        Introduce tus datos para registrarte.
+      </p>
     </div>
+
+    <!-- Campos -->
+    <div class="space-y-4">
+      <BaseInput
+        v-model="form.name"
+        placeholder="Nombre"
+      />
+
+      <BaseInput
+        v-model="form.surname"
+        placeholder="Apellido"
+      />
+
+      <BaseInput
+        v-model="form.dni"
+        placeholder="DNI"
+      />
+
+      <BaseInput
+        v-model="form.email"
+        placeholder="Correo electrónico"
+      />
+    </div>
+
+    <!-- Botón -->
+    <BaseButton
+      type="submit"
+      class="w-full rounded-lg py-2.5 text-lg font-semibold transition duration-300 hover:scale-105"
+    >
+      Enviar
+    </BaseButton>
+  </form>
 </template>
 
 <script setup lang="ts">
