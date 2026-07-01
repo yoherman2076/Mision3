@@ -15,8 +15,3 @@ const emits = defineEmits<{
 
 </script>
 
-<style>
-button {
-    text-transform: capitalize;
-}
-</style>
