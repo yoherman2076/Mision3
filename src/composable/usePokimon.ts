@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import type { Pokemon } from '../types/types'
 import { api } from '../config/axios'
 
+
 export function usePokimon() {
 // La lógica que he seguido es que, al necesitar solo ciertos datos de los pokemones
 // llamo a la API una sola vez pidiendole lo que necesito.
@@ -21,7 +22,7 @@ export function usePokimon() {
         const randomId = Math.floor(Math.random() * 1025) + 1
         const response = await api.get(`/pokemon/${randomId}`)
         pokemon.value = response.data
-        
+        return response.data
       }
       catch (error) {
         pokerror.value = "Error garrafal al localizar el Pokemon."
@@ -35,6 +36,8 @@ export function usePokimon() {
     
     }
 
+    // trainStore.assignPokemon(id, pokemon)
+    
     return {
         pokemon,
         getRandomPokemon,

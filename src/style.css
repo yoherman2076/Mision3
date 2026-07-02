@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-prim: #140f07;
+  --color-sec: #262849;
+  --color-ter: #5a59a0;
+  --color-cuar: #9993fa;
+  --color-quin: #eddcf6;
+
+}
+
 html,
 body,
 #app {

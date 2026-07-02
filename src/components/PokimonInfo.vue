@@ -7,11 +7,11 @@
     />
 <!-- Cuando deja de cargar muestra el div con la información del bicho. -->
     <div v-else-if="pokemon">
-        <h2 class="text-center font-bold p-2 capitalize">
+        <h2 class="text-center font-bold text-3xl p-2 m-1 capitalize">
             {{ pokemon.name }}
         </h2>
-        <PokeTipo :types="pokemon.types" />
-        <PokeImage :pokeimage="pokemon.sprites.front_default" :alt="pokemon.name" />
+        <PokeTipo :types="pokemon.types" class="mb-1"/>
+        <PokeImage :pokeimage="pokemon.sprites.front_default" :alt="pokemon.name"/>
     </div>
 
 </template>

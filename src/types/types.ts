@@ -1,9 +1,17 @@
-export interface Form {
+export interface TrainerForm {
     name: string
     surname: string
     dni: string
     email: string
-    pokemon_assigned: string
+}
+
+export interface Trainer {
+    id: string
+    name: string
+    surname: string
+    dni: string
+    email: string
+    pokemon_assigned: Pokemon | null
 }
 
 export type Buttons = 'button' | 'submit' | 'reset'
@@ -40,3 +48,5 @@ export const typeClasses: Record<string, string> = {
     fairy: 'bg-pink-800 text-white',
     normal: 'bg-gray-600 text-white',
 }
+
+
