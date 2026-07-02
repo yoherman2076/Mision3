@@ -5,7 +5,10 @@ import type { Trainer, TrainerForm, Pokemon } from '../types/types'
 export const useTrainerStore = defineStore('trainer', ()=> {
     const trainers = ref<Trainer[]>([]);
     const editingTrainer = ref<Trainer | null>(null)
-
+    
+    function findTrainer(id: string) {
+        return trainers.value.find(t => t.id === id)
+    }
     function saveToLocalStorage() {
         localStorage.setItem(
             'trainers',
@@ -34,19 +37,16 @@ export const useTrainerStore = defineStore('trainer', ()=> {
         saveToLocalStorage()
     }
     function assignPokemon(id: string, pokemon: Pokemon) {
-        const trainer = trainers.value.find(t => t.id === id)
+        const trainer = findTrainer(id)
         if(!trainer) return
         trainer.pokemon_assigned = pokemon
         saveToLocalStorage()
     }
     function updateTrainer(updatedTrainer: Trainer) {
-        const index = trainers.value.findIndex(
-            trainer => trainer.id === updatedTrainer.id
-        )
-        if (index === -1) return
-        trainers.value[index] = updatedTrainer
+        const trainer = findTrainer(updatedTrainer.id)
+        if (!trainer) return 
+        Object.assign(trainer, updatedTrainer)
         saveToLocalStorage()
-
     }
     function startEditing(trainer: Trainer) {
         editingTrainer.value = { ...trainer }

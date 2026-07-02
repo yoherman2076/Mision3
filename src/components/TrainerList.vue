@@ -1,11 +1,11 @@
 <template>
-<div class="space-y-4">
-    <TrainerCard 
-    v-for="trainer in trainerStore.trainers"
-    :key="trainer.id"
-    :trainer="trainer"
-    />
-</div>
+    <div class="space-y-5">
+        <TrainerCard 
+            v-for="trainer in trainerStore.trainers"
+            :key="trainer.id"
+            :trainer="trainer"
+        />
+    </div>
 </template>
 
 <script setup lang="ts">

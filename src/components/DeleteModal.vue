@@ -11,13 +11,14 @@
       
             <div class="flex gap-4">
               <BaseButton
-                class="bg-slate-600 hover:bg-slate-700"
+                class="duration-300 hover:bg-cuar hover:text-prim"
                 @click="emit('cancel')"
               >
                 Cancelar
               </BaseButton>
       
               <BaseButton
+                class="duration-300 hover:bg-red-600/80"
                 @click="emit('confirm')"
               >
                 Eliminar

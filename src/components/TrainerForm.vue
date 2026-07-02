@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="sendDatos"
-    class="max-w-md rounded-2xl border border-slate-700 bg-slate-800/70 p-8 shadow-2xl backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-cyan-500/20 space-y-6"
+    class="rounded-xl border border-slate-700 bg-slate-800/70 p-8 space-y-6 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20"
   >
     <!-- Cabecera -->
     <div class="text-center space-y-2">
@@ -40,7 +40,7 @@
     <!-- Botón -->
     <BaseButton
       type="submit"
-      class="w-full rounded-lg py-2.5 text-lg font-semibold transition duration-300 hover:scale-105"
+      class="w-full rounded-lg py-2.5 text-lg font-semibold transition duration-300 hover:bg-cuar hover:text-prim"
     >
       Enviar
     </BaseButton>
@@ -89,7 +89,7 @@ const sendDatos = () => {
         }
         trainerStore.updateTrainer(updatedTrainer)
         trainerStore.clearEditing()
-        form.value = { ...initialForm }
+        
     } else {
         trainerStore.addTrainer(form.value)
     }

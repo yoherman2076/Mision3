@@ -50,4 +50,3 @@ export const typeClasses: Record<string, string> = {
 }
 
 
-export type TrainerFilter = "all" | "todo" | "done";

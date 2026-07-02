@@ -6,27 +6,34 @@
             <p v-if="trainer.pokemon_assigned" class="px-3 text-amber-300">
                 {{ trainer.pokemon_assigned.name }}
             </p>
+            <PokeTipo :types="trainer.pokemon_assigned.types" />
         </div>
-        <div class="flex justify-center">
-            <img class="w-40"
-            v-if="trainer.pokemon_assigned"
-            :src="trainer.pokemon_assigned.sprites.front_default"
-            :alt="trainer.pokemon_assigned.name"
+        <div v-if="trainer.pokemon_assigned" class="flex flex-col items-center gap-2">
+            
+            <img 
+                class="w-40"
+                :src="trainer.pokemon_assigned.sprites.front_default ?? undefined"
+                :alt="trainer.pokemon_assigned.name"
             />
         </div>
         
         <div class="flex justify-center">
-            <BaseButton @click='editTrainer' class="m-1 px-1">
+            <BaseButton 
+                @click='editTrainer' 
+                class="m-1 px-1 duration-300 hover:bg-cuar hover:text-prim"
+            >
                 Editar
             </BaseButton>
             
-            <BaseButton class="m-1 px-1"
-            @click="showModal = true">
-            Eliminar
+            <BaseButton 
+                class="m-1 px-1 duration-300 hover:bg-cuar hover:text-prim"
+                @click="showModal = true"
+            >
+                Eliminar
             </BaseButton>
             
-            <BaseButton class="m-1 px-1"
-                @click="assignPokemon(props.trainer.id)"
+            <BaseButton class="m-1 px-1 duration-300 hover:bg-cuar hover:text-prim"
+                @click="assignPokemon()"
             >
                 Asignar Pocket Monster
             </BaseButton>
@@ -46,13 +53,16 @@ import { useTrainerStore } from '../stores/trainerStores'
 import { usePokimon } from '../composable/usePokimon'
 import BaseButton from '../components/BaseButton.vue'
 import DeleteModal from './DeleteModal.vue'
+import PokeTipo from './PokeTipo.vue'
+import type { Trainer } from '../types/types'
+
 
 const showModal = ref(false)
 const trainerStore = useTrainerStore()
 const { getRandomPokemon } = usePokimon()
 
 const props = defineProps<{
-    trainer: Trainer
+    trainer: Trainer 
 }>()
 
 
