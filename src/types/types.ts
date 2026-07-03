@@ -16,6 +16,13 @@ export interface Trainer {
 
 export type Buttons = 'button' | 'submit' | 'reset'
 
+export type FormErrors = {
+  name: string
+  surname: string
+  dni: string
+  email: string
+}
+
 export type Pokemon = {
     name: string
     sprites: {
