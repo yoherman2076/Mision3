@@ -28,7 +28,6 @@ export function usePokimon() {
         pokerror.value = "Error garrafal al localizar el Pokemon."
       }
       finally {
-        await new Promise(resolve => setTimeout(resolve, 500))
         loading.value = false
 // Puse el loading más provisional y falso posible, tiene un tiempo estipilado porque
 // si no, no se vería.

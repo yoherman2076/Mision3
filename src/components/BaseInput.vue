@@ -5,19 +5,21 @@
             @input="updateValue"
             :placeholder="placeholder"
             :class="[
-                'w-full rounded-xl border-2 px-4 py-3 bg-sec/70 ',
-                error ? 'pb-6 border-red-500' : 'border-zinc-400'
+                'w-full rounded-xl border-2 px-4 py-3 bg-sec/70 focus:border-amber-400 focus:outline-none',
+                error ? 'pb-4 border-red-500' : 'border-quin'
             ]"
         />
-        <!-- w-full rounded-xl border border-zinc-400 bg-slate-800/70 px-4 py-3 text-white placeholder:text-slate-400 transition-all duration-200 outline-none focus:border-violet-500 focus:ring-cyan-500/40 -->
-        <p v-if="error" 
-            class="absolute left-4.5 bottom-0.5 text-xs text-red-500">
-            {{ props.error }}
-        </p>
+        
+        <ErrorMessage
+            v-if="props.error"
+            :message="props.error"
+            classes="absolute left-4.5 bottom-0.5 text-xs text-red-500"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
+import ErrorMessage from './ErrorMessage.vue'
 const props = defineProps<{
     modelValue: string
     placeholder: string

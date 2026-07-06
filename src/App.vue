@@ -14,12 +14,12 @@
       <div class="grid grid-cols-1 gap-8 mx-8 lg:grid-cols-3 items-start mt-10">
 
         <!-- Formulario -->
-        <div>
-          <Form />
-        </div>
+        
+        <Form />
+        
 
         <!-- Pokémon -->
-        <div class="rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
+        <div class="h-122 rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
           <RandomButton
             @random-click="getRandomPokemon"
             class="flex justify-center mx-auto mb-2 w-full "
@@ -33,7 +33,7 @@
         </div>
 
         <!-- Lista -->
-        <div class="min-h-134 rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
+        <div class="h-122 max-h-130 overflow-y-auto scrollbar-none rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
           <TrainerList />
         </div>
 
