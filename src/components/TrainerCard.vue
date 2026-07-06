@@ -6,11 +6,17 @@
             <p v-if="trainer.pokemon_assigned" class="px-3 text-amber-300">
                 {{ trainer.pokemon_assigned.name }}
             </p>
-            <PokeTipo :types="trainer.pokemon_assigned.types" />
+            <PokeTipo v-if="trainer.pokemon_assigned" :types="trainer.pokemon_assigned.types" />
         </div>
         <div v-if="trainer.pokemon_assigned" class="flex flex-col items-center gap-2">
             
+            <Error
+                class="bg-red-200 border border-red-400 text-red-700 px-4 py-3 my-5 rounded text-center"
+                v-if="pokerror"
+                :message="pokerror"
+            />
             <img 
+                v-else-if="!pokerror"
                 class="w-40"
                 :src="trainer.pokemon_assigned.sprites.front_default ?? undefined"
                 :alt="trainer.pokemon_assigned.name"
@@ -55,11 +61,11 @@ import BaseButton from '../components/BaseButton.vue'
 import DeleteModal from './DeleteModal.vue'
 import PokeTipo from './PokeTipo.vue'
 import type { Trainer } from '../types/types'
-
+import Error from './ErrorMessage.vue'
 
 const showModal = ref(false)
 const trainerStore = useTrainerStore()
-const { getRandomPokemon } = usePokimon()
+    const { getRandomPokemon, pokerror } = usePokimon()
 
 const props = defineProps<{
     trainer: Trainer 
