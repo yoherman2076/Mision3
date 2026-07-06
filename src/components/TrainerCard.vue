@@ -6,7 +6,7 @@
             <p v-if="trainer.pokemon_assigned" class="px-3 text-amber-300">
                 {{ trainer.pokemon_assigned.name }}
             </p>
-            <PokeTipo :types="trainer.pokemon_assigned.types" />
+            <PokeTipo v-if="trainer.pokemon_assigned" :types="trainer.pokemon_assigned.types" />
         </div>
         <div v-if="trainer.pokemon_assigned" class="flex flex-col items-center gap-2">
             

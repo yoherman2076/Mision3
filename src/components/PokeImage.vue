@@ -4,7 +4,7 @@
             v-if="pokeimage"    
             :src="pokeimage" 
             alt="alt"
-            class="w-60 h-60 p-1 mt-4 object-contain border-3 rounded-2xl bg-slate-600/70 backdrop-blur transition duration-400 hover:translate-y-1 "
+            class="w-60 h-60 p-1 my-4 object-contain border-3 rounded-2xl bg-slate-600/70 backdrop-blur transition duration-400 hover:translate-y-1 "
         >
     </div>
 </template>

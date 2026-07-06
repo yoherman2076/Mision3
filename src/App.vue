@@ -33,7 +33,7 @@
         </div>
 
         <!-- Lista -->
-        <div class="rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
+        <div class="min-h-134 rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
           <TrainerList />
         </div>
 

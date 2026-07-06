@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="sendDatos"
-    class="min-h-135 rounded-xl border-2 border-cuar bg-slate-800/70 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20"
+    class="max-h-140 rounded-xl border-2 border-cuar bg-slate-800/70 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20"
   >
   <div class="space-y-4  p-8">
     <!-- Cabecera -->

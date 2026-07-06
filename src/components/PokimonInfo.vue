@@ -1,17 +1,19 @@
 <template>
-    <PokeLoading v-if="loading" :loading="loading" :pokemon="pokemon"/>
-    
-    <Error 
-        v-else-if="pokerror"
-        :message="pokerror"
-    />
-<!-- Cuando deja de cargar muestra el div con la información del bicho. -->
-    <div v-else-if="pokemon">
-        <h2 class="text-center font-bold text-3xl p-2 m-1 capitalize">
-            {{ pokemon.name }}
-        </h2>
-        <PokeTipo :types="pokemon.types" class="mb-1"/>
-        <PokeImage :pokeimage="pokemon.sprites.front_default" :alt="pokemon.name"/>
+    <div class="min-h-100">
+        <PokeLoading v-if="loading" :loading="loading" :pokemon="pokemon"/>
+        
+        <Error 
+            v-else-if="pokerror"
+            :message="pokerror"
+        />
+    <!-- Cuando deja de cargar muestra el div con la información del bicho. -->
+        <div v-else-if="pokemon">
+            <h2 class="text-center font-bold text-3xl p-2 my-1 capitalize">
+                {{ pokemon.name }}
+            </h2>
+            <PokeTipo :types="pokemon.types" class="my-5"/>
+            <PokeImage :pokeimage="pokemon.sprites.front_default" :alt="pokemon.name"/>
+        </div>
     </div>
 
 </template>
