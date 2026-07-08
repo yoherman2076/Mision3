@@ -7,7 +7,7 @@
         />
         
         <Error
-            class="bg-red-200 border border-red-400 text-red-700 px-4 py-3 rounded text-center"
+            class="bg-red-200 border border-red-400 text-red-700 px-4 rounded text-center"
             v-else-if="pokerror"
             :message="pokerror"
         />
@@ -16,7 +16,7 @@
             <h2 class="text-center font-bold text-3xl p-2 my-1 capitalize">
                 {{ pokemon.name }}
             </h2>
-            <PokeTipo :types="pokemon.types" class="mt-5"/>
+            <PokeTipo :types="pokemon.types" class=""/>
             <PokeImage :pokeimage="pokemon.sprites.front_default" :alt="pokemon.name"/>
         </div>
     </div>

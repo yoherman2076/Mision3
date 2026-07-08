@@ -9,56 +9,40 @@
       </h1>
     </header>
 
-    <!-- Contenido -->
-    <section class="container mx-auto">
-      <div class="grid grid-cols-1 gap-8 mx-8 lg:grid-cols-3 items-start mt-10">
+    <NavBar 
+      v-if="!route.meta.hideNavbar"
+      class="bg-sec my-4"
+    />
 
-        <!-- Formulario -->
-        
-        <Form />
-        
-
-        <!-- Pokémon -->
-        <div class="h-122 rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
-          <RandomButton
-            @random-click="getRandomPokemon"
-            class="flex justify-center mx-auto mb-2 w-full "
-          />
-
-          <PokimonInfo
-            :loading="loading"
-            :pokemon="pokemon"
-            :pokerror="pokerror"
-          />
-        </div>
-
-        <!-- Lista -->
-        <div class="h-122 max-h-130 overflow-y-auto scrollbar-none rounded-xl bg-slate-800/70 p-8 border-2 border-cuar shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20">
-          <TrainerList />
-        </div>
-
-      </div>
-    </section>
+    <RouterView v-slot="{ Component, route }">
+      <Transition name="fade-slide" mode="out-in">
+        <component :is="Component" :key="route.path" />
+      </Transition>
+    </RouterView>
 
   </main>
 </template>
 
 
 <script setup lang="ts">
-import RandomButton from "./components/RandomButton.vue"
-import Form from "./components/TrainerForm.vue"
-import PokimonInfo from './components/PokimonInfo.vue'
-import { usePokimon } from './composable/usePokimon.ts'
-import TrainerList from "./components/TrainerList.vue"
-
-
-// Todas las variables del composable:
-const {
-  pokemon,
-  loading,
-  pokerror,
-  getRandomPokemon  
-} = usePokimon()
-
-
+import NavBar from './components/NavBar.vue';
+import { useRoute } from 'vue-router'
+const route = useRoute()
 </script>
+
+<style>
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+</style>
