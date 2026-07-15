@@ -3,9 +3,9 @@
     @submit.prevent="sendDatos"
     class="max-h-140 rounded-xl border-2 border-cuar bg-slate-800/70 shadow-2xl backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-cyan-500/20"
   >
-  <div class="space-y-4  p-8">
+  <div class="space-y-2 px-8">
     <!-- Cabecera -->
-    <div class="text-center space-y-2">
+    <div class="text-center my-3 space-y-2">
       <h2 class="text-3xl font-bold text-white">
         Entrenador Pokémon
       </h2>
@@ -16,7 +16,7 @@
     </div>
     
     <!-- Campos -->
-    <div class="space-y-6">
+    <div class="space-y-4 mb-4">
       <BaseInput
         v-model="form.name"
         placeholder="Nombre"

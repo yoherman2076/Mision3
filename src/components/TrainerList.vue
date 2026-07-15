@@ -1,5 +1,5 @@
 <template>
-    <div class="space-y-5">
+    <div class="space-y-5 w-100">
         <TrainerCard 
             v-for="trainer in trainerStore.trainers"
             :key="trainer.id"

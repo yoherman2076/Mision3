@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center items-center gap-2">
+    <div class="flex justify-center items-center m-2 gap-2">
         <span 
             v-for="t in types" 
             :key="t.type.name" 
