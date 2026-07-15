@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import MainLayout from '../layouts/MainLayout.vue'
+import AuthLayout from '../layouts/AuthLayout.vue'
 import Login from '../views/LoginView.vue'
 import Dashboard from '../views/DashboardView.vue'
 import NotFound from '../views/NotFoundView.vue'
@@ -6,36 +8,42 @@ import Trainers from '../views/TrainersView.vue'
 import { useAuthStore } from '../stores/auth.ts'
 
 const routes = [
-    { 
-        path: '/dashboard',
-        name: 'dashboard', 
-        component: Dashboard,
-        meta: { hideNavbar: false,
-                requiresAuth: true
-        } 
+    {
+        path: '/',
+        component: MainLayout,
+        children: [
+            {
+                path: 'dashboard',
+                name: 'dashboard',
+                component: Dashboard,
+                meta: {
+                    requiresAuth: true,
+                },
+            },
+            {
+                path: 'trainers',
+                name: 'trainers',
+                component: Trainers,
+                meta: {
+                    requiresAuth: true,
+                },
+            },
+        ],
     },
-    { 
-        path: '/login',
-        name: 'login',
-        component: Login,
-        meta: { hideNavbar: true,
-                requiresAuth: false
-        }  
+    {
+        path: '/',
+        component: AuthLayout,
+        children: [
+            {
+                path: 'login',
+                name: 'login',
+                component: Login,
+            },
+        ],
     },
-    { 
-        path: '/trainers',
-        name: 'trainers', 
-        component: Trainers,
-        meta: { hideNavbar: false,
-                requiresAuth: true
-        }  
-    },
-    { 
-        path: '/:pathMatch(.*)*', 
+    {
+        path: '/:pathMatch(.*)*',
         component: NotFound,
-        meta: { hideNavbar: true,   
-                requiresAuth: false
-         }  
     },
 ]
 

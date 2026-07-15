@@ -1,6 +1,6 @@
 # Misión 3: Poke API - Cazadlos a todos
 
-Esta guía te explica cómo preparar, ejecutar y desplegar el proyecto desde cero en un ordenador que no tenga nada instalado.
+Esta guía explica cómo preparar, ejecutar y desplegar el proyecto, que ya incorpora Vue Router para la navegación entre vistas y un flujo de autenticación básico.
 
 ## 1. Requisitos previos
 
@@ -39,13 +39,7 @@ Dentro de la carpeta del proyecto, instala todas las dependencias:
 npm install
 ```
 
-Este proyecto usa Pinia para la gestión del estado, por lo que también debes instalarlo explícitamente:
-
-```bash
-npm install pinia
-```
-
->Si ya está incluido en el archivo package.json, este paso suele ser innecesario, pero es útil comprobarlo y tenerlo disponible en un entorno limpio.
+El proyecto ya incluye en el archivo package.json las dependencias necesarias para trabajar con Vue Router, Pinia, Axios y Vite.
 
 ---
 ## 4. Ejecutar el proyecto en desarrollo
@@ -63,7 +57,22 @@ http://localhost:5173
 ```
 
 ---
-## 5. Preparar la versión de producción
+## 5. Rutas principales de la aplicación
+
+La app usa Vue Router y define estas rutas principales:
+
+- `/login`: vista pública para iniciar sesión.
+- `/dashboard`: vista protegida para el panel principal.
+- `/trainers`: vista protegida para consultar entrenadores.
+- `/:pathMatch(.*)*`: ruta de error 404.
+
+Además, el enrutador aplica una protección básica de acceso:
+
+- Si un usuario no está autenticado y intenta entrar a una vista protegida, se redirige a `/login`.
+- Si ya está autenticado y entra en `/login`, se redirige a `/dashboard`.
+
+---
+## 6. Preparar la versión de producción
 
 Cuando quieras desplegar la aplicación, primero genera la build optimizada:
 
@@ -80,7 +89,7 @@ npm run preview
 ```
 
 ---
-## 6. Despliegue del proyecto completo
+## 7. Despliegue del proyecto completo
 
 El proyecto está preparado para desplegarse como una aplicación web estática de Vite.
 
@@ -117,12 +126,12 @@ dist
 Así, el servicio generará y publicará la aplicación automáticamente.
 
 ---
-## 7. Tecnologías usadas
+## 8. Tecnologías usadas
 
 - Vue 3
 - Vite
 - TypeScript
 - Pinia
-- Tailwind CSS
+- Vue Router
 - Axios
 - PokéAPI

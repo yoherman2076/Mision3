@@ -59,7 +59,7 @@ function handleLogin() {
 
     const success = auth.login(email.value, password.value)
     if (success) {
-        router.push('/dashboard')
+        router.push({ name: 'dashboard' })
     } else {
         error.value = 'correo o contraseña incorrectos'
     }
