@@ -1,21 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainLayout from '../layouts/MainLayout.vue'
-import AuthLayout from '../layouts/AuthLayout.vue'
-import Login from '../views/LoginView.vue'
-import Dashboard from '../views/DashboardView.vue'
-import NotFound from '../views/NotFoundView.vue'
-import Trainers from '../views/TrainersView.vue'
 import { useAuthStore } from '../stores/auth.ts'
 
 const routes = [
     {
         path: '/',
-        component: MainLayout,
+        component: () => import('../layouts/MainLayout.vue'),
         children: [
             {
                 path: 'dashboard',
                 name: 'dashboard',
-                component: Dashboard,
+                component: () => import('../views/DashboardView.vue'),
                 meta: {
                     requiresAuth: true,
                 },
@@ -23,7 +17,7 @@ const routes = [
             {
                 path: 'trainers',
                 name: 'trainers',
-                component: Trainers,
+                component: () => import('../views/TrainersView.vue'),
                 meta: {
                     requiresAuth: true,
                 },
@@ -32,18 +26,18 @@ const routes = [
     },
     {
         path: '/',
-        component: AuthLayout,
+        component: () => import('../layouts/AuthLayout.vue'),
         children: [
             {
                 path: 'login',
                 name: 'login',
-                component: Login,
+                component: () => import('../views/LoginView.vue'),
             },
         ],
     },
     {
         path: '/:pathMatch(.*)*',
-        component: NotFound,
+        component: () => import('../views/NotFoundView.vue'),
     },
 ]
 
